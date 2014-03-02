@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <style>
+         .border{
+            border: 1px solid;
+         }
+         .nav{
+            min-height: 30px;
+            max-height: 30px;
+            height: 30px
+         }
+         ul, li{
+            height: 30px
+         }
+      </style>
+      {% block css %}{% endblock %}
+      {% block pre_scripts%}{% endblock %}
+      <title>VENT</title>     
+   </head>
+   <body>
+      <header class="navbar navbar-static-top" id="top" role="banner">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#" style="padding:5px 15px">Register</a></li>
+              <li><a href="#" style="padding:5px 15px">Login</a></li>
+            </ul>
+            <div class="" style="margin-top:0px;border-bottom:3px solid">
+               <center>
+                  <img src="{% static 'img/vent-header.png' %}" alt="Vent Logo"> <span style="font-size:70px">VENT</span>
+               </center>
+            </div>
+        </div>
+      </header>
+      
+      {% block main_body %}
+      {% endblock %}
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      {% block post_scripts%}{% endblock %}
+   </body>
+</html>
