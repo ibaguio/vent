@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'vent',
     'vcalendar',
+    'event',
 )
 
 # List of callables that know how to import templates from various sources.
@@ -74,7 +75,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'vent',
-        'USER': 'root', 
+        'USER': 'vent', 
         'PASSWORD': 'vent',
         'HOST': 'localhost',
         'PORT': '', 

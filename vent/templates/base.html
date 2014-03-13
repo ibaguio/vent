@@ -18,7 +18,11 @@
   <body>
     <div id="container">
       <div id="userlogin">
-        sign up | log in
+        {% if not user.is_authenticated %}
+            sign up | <a href="{% url 'vent.views.login' %}">log in</a>
+        {% else %}
+             Hello, {{ user }} | <a href="{% url 'vent.views.logout' %}">log out</a>
+        {% endif %}
       </div>
       <div id="header">
         <h1><img src="{% static "img/logo.png" %}" width="15%"/>VENT</h1>

@@ -35,8 +35,8 @@ def logout(request):
     return redirect('/login')
 
 
-def home():
-	pass
+def home(request):
+	return redirect('/calendar')
 
 def about(request):
 	return render(request,"about/about.html")
