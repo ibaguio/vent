@@ -1,0 +1,59 @@
+	body, html {
+		min-width: 1300px;
+	}
+	#container {
+				margin-left: 15px;
+				nargin-right: 15px;
+			}
+
+			#userlogin {
+				font-family: 'Duru Sans';
+				position: absolute;
+				right: 25px;
+				top: 15px;
+				font-size: 1.5em;
+			}
+
+			#header {
+				font-family: 'Duru Sans' sans-serif;
+				text-align: center;
+				margin-top: -25px;
+				border-bottom: 2px double #AAAAAA;
+				height: 175px;
+				overflow: hidden;
+			}
+
+			#header h1 {
+				font-size: 5em;
+			}
+
+			#calendar {
+				margin-left: 55px;
+			}
+
+			#footer {
+				position: relative;
+				bottom: -50px;
+				width: 100%;
+				text-align: center;
+				border-top: 1px solid #AAAAAA;
+				border-bottom: 1px solid #AAAAAA;
+			}
+
+			#footlinks li {
+				font-family: 'Duru Sans' sans-serif;
+				display: inline-block;
+				font-size: 2em;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+
+			.circle {
+				border-radius: 50%;
+				width: 30px;
+				height: 30px;
+				display: inline-block;
+				position: relative;
+				top: 5px;
+			}
+			}

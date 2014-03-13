@@ -1,0 +1,72 @@
+/*  rows */ 
+		.rowa {
+			margin-top: -2px;
+			padding-left: 139px;
+			} 
+		.rowb {
+			padding-left: 69px;
+			margin-top: -78px;
+			}
+		.rowc {
+			margin-top: -82px;
+			margin-left: -1px;
+		}
+
+		#row3 {
+			margin-top: -78px;
+		}
+
+		#row4 {
+			margin-top: -78px;
+		}
+
+		/* diamonds */
+		.outx
+		{
+			display: inline-block;
+			margin-top: 50px;
+			margin-left: 40px;
+			width:100px;
+			height:100px;
+			background-color:yellow;
+			/* Rotate div */
+			transform:rotate(45deg);
+			-ms-transform:rotate(45deg); /* IE 9 */
+			-webkit-transform:rotate(45deg); /* Opera, Chrome, and Safari */
+			}
+
+		.inx {
+			display: inline-block;
+			font-size: 27pt;
+			margin-top: 17px;
+			margin-left: 18px;
+			transform:rotate(-45deg);
+			-ms-transform:rotate(-45deg); /* IE 9 */
+			-webkit-transform:rotate(-45deg); /* Opera, Chrome, and Safari */
+			width: 67px;
+			height: 67px;
+			overflow: hidden;
+			text-align: center;
+			}
+
+		.purple {
+			background-color: rgb(153,102,203);
+		}
+		.orange {
+			background-color: rgb(255, 204,102);
+		}
+		.teal {
+			background-color: rgb(0, 204, 203);
+		}
+		.darkorange {
+			background-color: rgb(239, 149, 99);
+		}
+		.hasevent {
+			background-color: white;
+			box-shadow: 0 0 0 3px black inset;
+		}
+
+		.weekday {
+			font-size: 13pt;
+		}
+		

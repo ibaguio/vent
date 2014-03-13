@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}VENT{% endblock %}
+{% block scripts %}
+<script>
+      $(document).ready(function() {
+        var dayHasEvent = {{dayHasEvent}};
+        var weekDays = {{weekDays|safe}};
+
+        for (var i = 1; i <= 7; i++) {
+          $("#row1").append("<div class=\"outx\" id=\"diamond"+ i +"\"><div class=\"inx\" id=\"diamond_content"+ i +"\"></div></div>");
+        }
+        for (var i = 8; i <= 15; i++) {
+          $("#row2").append("<div class=\"outx\" id=\"diamond"+ i +"\"><div class=\"inx\" id=\"diamond_content"+ i +"\"></div></div>");
+        }
+        for (var i = 16; i <= 23; i++) {
+          $("#row3").append("<div class=\"outx\" id=\"diamond"+ i +"\"><div class=\"inx\" id=\"diamond_content"+ i +"\"></div></div>");
+        }
+        for (var i = 24; i <= 30; i++) {
+          $("#row4").append("<div class=\"outx\" id=\"diamond"+ i +"\"><div class=\"inx\" id=\"diamond_content"+ i +"\"></div></div>");
+        }
+
+        $("#diamond1, #diamond2, #diamond11, #diamond12, #diamond14, #diamond19").addClass("purple");
+        $("#diamond3, #diamond4, #diamond9, #diamond13, #diamond16, #diamond27, #diamond29").addClass("orange");
+        $("#diamond5, #diamond15, #diamond18, #diamond22, #diamond24, #diamond28").addClass("teal");
+        $("#diamond7, #diamond17, #diamond20, #diamond26, #diamond30").addClass("darkorange");
+        
+        for (var i = 0; i <= 29; i++) {
+          if (dayHasEvent[i]) {
+            $("#diamond" + (i+1)).addClass("hasevent");
+            $("#diamond_content" + (i+1)).html((i+1) + "<span class=\"weekday\">" + weekDays[i] + "</span>");
+            $("#diamond_content" + (i+1)).attr('data-container', 'body');
+            $("#diamond_content" + (i+1)).attr('data-placement', 'right');
+            $("#diamond_content" + (i+1)).attr('data-title', 'March ' + i + ', 2014');
+            $("#diamond_content" + (i+1)).popover({html: true, 
+            	content: '<ul><li>Org Pakain</li><li>Frat Anniversary</li><li>University Tour</li><li>Org Something Contest</li></ul>'});
+          }
+        }
+
+        $("div").hover(function() {
+          if ($(this).hasClass('hasevent')) {
+            $(this).popover('show');
+          }
+        });
+      });
+    </script>
+{% endblock %}
+{%  block contents %}
+<div id="calendar">
+        <div id="row1" class="rowa"></div>
+        <div id="row2" class="rowb"></div>
+        <div id="row3" class="rowc"></div>
+        <div id="row4" class="rowb"></div>
+      </div>
+{% endblock %}

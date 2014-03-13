@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vent',
+    'vcalendar',
 )
 
 # List of callables that know how to import templates from various sources.
