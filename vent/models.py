@@ -36,12 +36,13 @@ class User(AbstractBaseUser):
    first_name = models.CharField(max_length=30, blank=True)
    last_name = models.CharField(max_length=30, blank=True)
    contact = models.CharField(max_length=30, blank=True)
-   age = models.IntegerField(max_length=100, blank=True)
+   age = models.IntegerField(max_length=100, blank=True, null=True)
    gender = models.CharField(max_length=6,choices=(("M","Male"),("F","Female")))
 
    joined = models.DateTimeField(default=timezone.now)
    is_active = models.BooleanField(default=True)
    is_admin = models.BooleanField(default=False)
+   org = models.ManyToManyField('Organization')
 
    objects = UserManager()
 
@@ -75,29 +76,9 @@ class User(AbstractBaseUser):
       # Simplest possible answer: All admins are staff
       return self.is_admin
 
-class OrgManager(BaseUserManager):
-   def create_user(self, username, email, password=None):
-      if not username:
-         raise ValueError('Users must have a username')
-
-      user = self.model(
-         username=username,
-         email=self.normalize_email(email),
-      )
-
-      user.set_password(password)
-      user.save(using=self._db)
-      return user
-
-class Organization(AbstractBaseUser):
+class Organization(models.Model):
    choices = (("Org","Student Org"),("Council","Council"),("Frat","Fraternity"),("Soro","Sorority"),("Other","Other"))
 
-   username = models.CharField(max_length=16, unique=True)
-   email = models.EmailField(
-     verbose_name='email address',
-     max_length=255,
-     unique=True,
-   )
    name = models.CharField(max_length=30, blank=True)
    
    #contact info
@@ -113,35 +94,18 @@ class Organization(AbstractBaseUser):
 
    location = models.CharField(max_length=100, blank=True)
    joined = models.DateTimeField(default=timezone.now)
-   is_active = models.BooleanField(default=True)
-   is_admin = models.BooleanField(default=False)
 
-   objects = OrgManager()
-
-   USERNAME_FIELD = 'username'
-   REQUIRED_FIELDS = ['email']
-
-   def get_full_name(self):
-      return self.name.strip()
-
-   def get_short_name(self):
-      return self.name.strip()
+   admin = models.ManyToManyField('User')
 
    def __unicode__(self):
-      return self.username
+      return self.name
 
-   def has_perm(self, perm, obj=None):
-      "Does the user have a specific permission?"
-       # Simplest possible answer: Yes, always
-      return True
+class Events(models.Model):
+   name = models.CharField(max_length=32)
+   start_time = models.DateTimeField() 
+   stop_time = models.DateTimeField()
+   description = models.CharField(max_length=64)
+   location = models.CharField(max_length=32)
+   main_org = models.ForeignKey('Organization',related_name='main_org')
+   partner_orgs = models.ManyToManyField('Organization',related_name='partner_orgs')
 
-   def has_module_perms(self, app_label):
-      "Does the user have permissions to view the app `app_label`?"
-      # Simplest possible answer: Yes, always
-      return True
-
-   @property
-   def is_staff(self):
-      "Is the user a member of staff?"
-      # Simplest possible answer: All admins are staff
-      return False
