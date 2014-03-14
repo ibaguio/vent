@@ -25,12 +25,12 @@
         {% endif %}
       </div>
       <div id="header">
-        <h1><img src="{% static "img/logo.png" %}" width="15%"/>VENT</h1>
+        <h1><a href="{% url "vent.views.home" %}"><img src="{% static "img/logo.png" %}" width="15%"/>VENT</a></h1>
       </div>
       {% block contents %}{% endblock %}
       <div id="footer">
         <ul id="footlinks">
-          <li><span class="circle darkorange">&nbsp;</span>    HOME</li>
+          <li><a href="{% url "vent.views.about" %}"><span class="circle darkorange">&nbsp;</span>    HOME</a></li>
           <li><span class="circle teal">&nbsp;</span>    ORGANIZATION</li>
           <li><span class="circle purple">&nbsp;</span>    SPONSORS</li>
         </ul>

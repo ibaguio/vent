@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'vent',
     'vcalendar',
     'event',
+    'org',
 )
 
 # List of callables that know how to import templates from various sources.

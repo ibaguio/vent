@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}VENT{% endblock %}
+{% block scripts %}{% endblock %}
+{% block styles %}{% endblock %}
+{% block contents %}
+	<div class="row">
+		<div class="col-md-3">
+		<img class="img-responsive" src="{% static "img/org-sidebar.png" %}"/>
+		</div>
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-3">
+					<img width="80%" src="{% static "img/event-orglogo.png" %}"/>
+				</div>
+				<div class="col-md-9">
+					<h1>UP JUNIOR MARKETING ASSOCIATION
+				</div>
+			</div>
+			<div class="row">
+				<div class="well col-md-11" style="text-align: center;">
+				The UP Junior Marketing Association (UP JMA)<br>
+				is a university-wide student organization based in the<br>
+				College of Business Administration,<br>
+				University of the Philippines, Diliman.
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

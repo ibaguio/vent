@@ -16,4 +16,5 @@ urlpatterns = patterns('vent.views',
    url(r'^logout/$', 'logout', name='logout'),
    url(r'^calendar/$', include('vcalendar.urls'), name='vcalendar'),
    url(r'^event/$', include('event.urls'), name='event'),
+   url(r'^org/$', include('org.urls'), name='org'),
 )

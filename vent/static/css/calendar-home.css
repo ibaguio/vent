@@ -1,6 +1,9 @@
 	body, html {
 		min-width: 1300px;
 	}
+	a {
+		color: black;
+	}
 	#container {
 				margin-left: 15px;
 				nargin-right: 15px;
@@ -17,9 +20,9 @@
 			#header {
 				font-family: 'Duru Sans' sans-serif;
 				text-align: center;
-				margin-top: -25px;
+				margin-top: 0.2%;
 				border-bottom: 2px double #AAAAAA;
-				height: 175px;
+				height: 1%;
 				overflow: hidden;
 			}
 
@@ -28,7 +31,9 @@
 			}
 
 			#calendar {
-				margin-left: 55px;
+				position: relative;
+				width: 100%;
+				left: 9%;
 			}
 
 			#footer {

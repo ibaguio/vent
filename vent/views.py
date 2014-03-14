@@ -42,10 +42,10 @@ def about(request):
 	return render(request,"about/about.html")
 
 def supportUs(request):
-	return render(request,"about/support-us.html")
+  return render(request,"about/about.html")
 
 def faq(request):
-	return render(request,"about/faq.html")
+  return render(request,"about/about.html")
 
 def contact(request):
-	return render(request,"about/contact.html")
+  return render(request,"about/about.html")

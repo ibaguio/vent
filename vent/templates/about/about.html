@@ -1,9 +1,20 @@
-{% extends 'about/base.html' %}
-
-{% block css %}
-
-{% endblock %}
-
-{% block main_body %}
-	<h2>ABOUT</h2>
+{% extends 'base.html' %}
+{% block contents %}
+	<div class="row">
+		<div class="col-md-4">
+			<div style="border: 1px solid gray; margin: 15px; text-align: center;">
+				<h3><a href="{% url 'vent.views.about' %}">ABOUT</a></h3>
+				<h3><a href="{% url 'vent.views.supportUs' %}">SUPPORT US</a></h3>
+				<h3><a href="{% url 'vent.views.faq' %}">FAQ'S</a></h3>
+				<h3><a href="{% url 'vent.views.contact' %}">CONTACT US</a></h3>
+				<h3><a href="#">COPYRIGHT</a></h3>
+				<h3><a href="#">DEVELOPER</a></h3>
+			</div>
+		</div>
+		<div class="col-md-7">
+			<div style="text-align: center;">
+				<h2>DESCRIPTION HERE</h2>
+			</div>
+		</div>
+	</div>
 {% endblock %}
