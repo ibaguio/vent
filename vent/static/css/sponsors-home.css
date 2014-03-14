@@ -1,0 +1,18 @@
+#linkbox {
+	display: relative;
+ 	border: 1px solid gray;
+  	margin: 15px;
+   	text-align: center;
+   	height: 500px;
+}
+
+#linkbox h1 {
+	padding-top: 35px;
+}
+
+.sponsbox {
+	border: 1px solid gray;
+	margin: 15px;
+	width: 250px;
+	height: 250px;
+}

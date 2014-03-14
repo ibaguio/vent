@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "css/sponsors-home.css" %}"/>
+{% endblock %}
+{% block contents %}
+	<div class="row">
+		<div class="col-md-4">
+			<div id="linkbox">
+				<h3><a href="{% url 'sponsors.views.home' %}">GREAT DEALS</a></h3>
+				<h3><a href="{% url 'sponsors.views.home' %}">PARTNERS</a></h3>
+				<h3><a href="{% url 'sponsors.views.home' %}">CO-PRESENTORS</a></h3>
+				<h3><a href="{% url 'sponsors.views.home' %}">MINOR SPONSORS</a></h3>
+			</div>
+		</div>
+		<div class="col-md-7">
+			<div style="text-align: center;">
+				<div class="row">
+					<div class="col-md-3 sponsbox">
+						Content
+					</div>
+					<div class="col-md-3 sponsbox">
+						Content
+					</div>
+					<div class="col-md-3 sponsbox">
+						Content
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 sponsbox">
+						Content
+					</div>
+					<div class="col-md-3 sponsbox">
+						Content
+					</div>
+					<div class="col-md-3 sponsbox">
+						Content
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

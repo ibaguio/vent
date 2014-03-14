@@ -17,4 +17,5 @@ urlpatterns = patterns('vent.views',
    url(r'^calendar/$', include('vcalendar.urls'), name='vcalendar'),
    url(r'^event/$', include('event.urls'), name='event'),
    url(r'^org/$', include('org.urls'), name='org'),
+   url(r'^sponsors/$', include('sponsors.urls'), name='sponsors'),
 )
