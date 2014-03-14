@@ -1,9 +1,44 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
+
 {% block title %}VENT{% endblock %}
 {% block scripts %}{% endblock %}
+{% block styles %}
+	<link rel="stylesheet" href="{% static "css/event-home.css" %}" />
+{% endblock %}
 {% block contents %}
 
-Hello
+<div class="row">
+	<div class="col-md-3">
+		<img class="img-responsive" src="{% static "img/event-sidebar.png" %}"/>
+	</div>
+	<div class="col-md-9">
+		<div class="row" style="padding-top:15px; padding-bottom: 15px;">
+			<div class="col-md-9">
+			<img src="{% static "img/event-banner.png" %}"/>
+			</div>
+			<div class="col-md-3">
+			<img width="60%" class="img-responsive" src="{% static "img/event-add.png" %}"/>
+			<br>ADD TO CALENDAR
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			<img width="70%" src="{% static "img/event-orglogo.png" %}"/>
+			</div>
+			<div class="col-md-10">
+			<h3>UP JUNIOR MARKETING ASSOCIATION</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-11 well">
+			<b>User 1:</b> They throw the best parties!<br>
+			<b>User 2:</b> Last sem's party wasn't so great... <br>
+			<b>User 3:</b> Who is this DJ?
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock %}
